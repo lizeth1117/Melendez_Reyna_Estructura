@@ -95,8 +95,8 @@ public class Menu {
                     else
                         nulo+=1 ;
                 }
-                System.out.println("Azul tiene"+azul+" votos\nRojo tiene "+rojo+"votos\nNegro tiene "+negro+"votos"
-                        + "\nAmarillo tiene "+amarillo+"votos\nToal de votos nulos "+nulo);
+                System.out.println("Azul tiene "+azul+" votos\nRojo tiene "+rojo+" votos\nNegro tiene "+negro+" votos"
+                        + "\nAmarillo tiene "+amarillo+" votos\nTotal de votos nulos "+nulo);
                 if (((amarillo/votantes)*100)>=60)
                     System.out.println("El Ganador fue el partido Amarillo");
                 else if (((azul/votantes)*100)>=60)
@@ -120,11 +120,11 @@ public class Menu {
         if (opcion==1)
             contador1=(contador1+1);
         if (opcion==2)
-            contador2=(contador1+1);
+            contador2=(contador2+1);
         if (opcion==3)
-            contador3=(contador1+1);
+            contador3=(contador3+1);
         if (opcion==4)
-            contador4=(contador1+1);
+            contador4=(contador4+1);
         
         } // final de do
         while(opcion!=5);
