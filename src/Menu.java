@@ -37,7 +37,7 @@ public class Menu {
                   System.out.println(palabra.length());
                 for (int i = palabra.length()-1; i >=0 ; i--) {
                     System.out.print(palabra.charAt(i));
-                    
+                    System.out.println(" ");
                 }
             }
             case 2-> { //numero perfecto
@@ -107,7 +107,7 @@ public class Menu {
                     System.out.println("El Ganador fue el partido Negro");
                 
                 else 
-                    System.out.println("Resultados de votaciones Invalidas");
+                    System.out.println("Votacion falliida");
             }
             case 5 -> {
                 System.out.println("la opcion 1. se uso "+contador1+" veces.");
