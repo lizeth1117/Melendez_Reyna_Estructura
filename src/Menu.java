@@ -19,7 +19,7 @@ public class Menu {
     public static void main(String[] args) {
         // TODO code application logic here
         int opcion, contador1=0, contador2=0, contador3=0, contador4=0;
-        int voto, azul=0, negro=0, amarillo=0, rojo=0, nulo=0 ;
+        int voto, azul=0, negro=0, amarillo=0, rojo=0, nulo=0, suma=0 ;
         String palabra ;
         double votantes ;
         Scanner entrada=new Scanner(System.in);
@@ -40,11 +40,45 @@ public class Menu {
                     
                 }
             }
-            case 2-> {
-            }
-            case 3 -> {
-            }
-            case 4 -> {
+            case 2-> { //numero perfecto
+                int nperfecto, sumadivisores=0, i=1;
+                System.out.println("Ingrese el numero que desea verificar");
+                nperfecto= entrada.nextInt();
+                do{
+                    if (nperfecto%i==0){
+                        sumadivisores+=i;
+                
+                }
+                i++;
+                }
+                while(i<=nperfecto/2);
+                if (sumadivisores==nperfecto)
+                System.out.println(nperfecto+"es un numero perfecto");
+                else 
+                     System.out.println(nperfecto+"no es un numero perfecto");
+            } //fin case 2
+            case 3 -> { //primos
+                int num1;
+                
+                System.out.println("Ingrese el Numero");
+                num1=entrada.nextInt();
+                if (num1==2){
+                    System.out.println("El numero si es primo");
+                }
+                else{
+                for (int i = 1; i < num1; i++) {
+                    int cero = num1%i;
+                    if (cero==0)
+                        suma=suma+1;
+                }
+                if (suma<2)
+                    System.out.println("El numero es primo");
+                else
+                    System.out.println("el numero no es primo");
+                }
+            } //fin case 3
+   
+            case 4 -> { //votacines
                 System.out.println("Ingrese cuantos votantes hay en el pais.");
                 votantes=entrada.nextDouble();
                 for (int i = 0; i < votantes; i++) {
@@ -61,7 +95,19 @@ public class Menu {
                     else
                         nulo+=1 ;
                 }
-                System.out.println("Azul tiene"+azul+"\nRojo tiene "+rojo);
+                System.out.println("Azul tiene"+azul+" votos\nRojo tiene "+rojo+"votos\nNegro tiene "+negro+"votos"
+                        + "\nAmarillo tiene "+amarillo+"votos\nToal de votos nulos "+nulo);
+                if (((amarillo/votantes)*100)>=60)
+                    System.out.println("El Ganador fue el partido Amarillo");
+                else if (((azul/votantes)*100)>=60)
+                    System.out.println("El Ganador fue el partido Azul");
+                else if (((rojo/votantes)*100)>=60)
+                    System.out.println("El Ganador fue el partido Rojo");
+                else if (((negro/votantes)*100)>=60)
+                    System.out.println("El Ganador fue el partido Negro");
+                
+                else 
+                    System.out.println("Resultados de votaciones Invalidas");
             }
             case 5 -> {
                 System.out.println("la opcion 1. se uso "+contador1+" veces.");
